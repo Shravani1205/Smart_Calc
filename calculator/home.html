@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Calc - Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #6b2e4c, #764ba2);
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .sidebar {
+            position: fixed;
+            left: -250px;
+            top: 0;
+            width: 250px;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            padding-top: 60px;
+            transition: left 0.3s ease-in-out;
+        }
+        .sidebar a {
+            display: block;
+            padding: 15px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .sidebar a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .sidebar.active {
+            left: 0;
+        }
+        .menu-toggle {
+            position: fixed;
+            left: 10px;
+            top: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 18px;
+            z-index: 1000;
+            transition: transform 0.3s ease-in-out;
+        }
+        .menu-toggle.active {
+            transform: rotate(90deg);
+        }
+        .content {
+            margin-left: 10px;
+            transition: margin-left 0.3s ease-in-out;
+        }
+        .content.active {
+            margin-left: 260px;
+        }
+    </style>
+</head>
+<body>
+    <button class="menu-toggle" id="menuButton" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+    <div class="sidebar" id="sidebar">
+        <a href="#" onclick="goToBasic()"><i class="fas fa-calculator"></i> Basic Calculator</a>
+        <a href="#" onclick="goToScientific()"><i class="fas fa-square-root-alt"></i> Scientific Calculator</a>
+        <a href="#" onclick="goToLenght()"><i class="fas fa-ruler"></i> Length Converter</a>
+        <a href="#" onclick="goToCurrency()"><i class="fas fa-money-bill-wave"></i> Currency Converter</a>
+        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+        <a href="#" onclick="goToLogin()"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+    </div>
+    <div class="content" id="content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6 fade-in">
+                    <h1 class="display-4">Welcome to Smart Calc</h1>
+                    <p class="lead">A modern web calculator that adjusts seamlessly to different screen sizes.</p>
+                    <div class="mt-4 text-start">
+                        <h3>Features:</h3>
+                        <ul>
+                            <li><strong>Basic Calculator:</strong> Perform simple arithmetic operations with ease.</li>
+                            <li><strong>Scientific Calculator:</strong> Advanced calculations including trigonometry.</li>
+                            <li><strong>Length Converter:</strong> Convert between different units of length efficiently.</li>
+                            <li><strong>Currency Converter:</strong> Get real-time currency exchange rates and conversions.</li>
+                       </ul>
+                       </div>
+                <a href="basic.html" class="btn btn-light btn-lg mt-3">Get Started</a>
+            </div>
+            </div>
+        </div>
+        <div>
+        <button class="btn btn-primary m-3" onclick="goBack()">Back</button>
+    </div>
+    </div>
+    <script>
+        function toggleMenu() {
+            var sidebar = document.getElementById("sidebar");
+            var content = document.getElementById("content");
+            var menuButton = document.getElementById("menuButton");
+            sidebar.classList.toggle("active");
+            content.classList.toggle("active");
+            menuButton.classList.toggle("active");
+        }
+        function goToBasic() {
+                  window.location.href="basic.html";
+             }
+        function goBack(){
+            window.location.href="login.html";
+        }
+        function goToLenght() {
+                  window.location.href="lenght.html";
+        }
+        function goToCurrency() {
+                  window.location.href="currency.html";
+        }
+        function goToScientific() {
+                  window.location.href="scientific.html";
+        }
+        function goToLogin() {
+                  window.location.href="login.html";
+        }
+    </script>
+</body>
+</html>

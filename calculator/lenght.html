@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Length Converter</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center col-md-6 col-lg-4">
+        <h2 class="mb-4">Length Converter</h2>
+        <div class="mb-3">
+            <input type="number" id="inputValue" class="form-control" placeholder="Enter length">
+        </div>
+        <div class="mb-3">
+            <select id="unit" class="form-select">
+                <option value="cm">Centimeters</option>
+                <option value="m">Meters</option>
+                <option value="inch">Inches</option>
+                <option value="feet">Feet</option>
+            </select>
+        </div>
+        <button class="btn btn-primary w-100" onclick="convertLength()">Convert</button>
+        <h4 class="mt-4" id="result"></h4>
+    <div>
+        <button class="btn btn-primary m-3" onclick="goBack()">Go Back</button>
+    </div>
+    </div>
+    <script>
+        function convertLength() {
+            let value = parseFloat(document.getElementById("inputValue").value);
+            let unit = document.getElementById("unit").value;
+            let result = "";
+            
+            if (isNaN(value)) {
+                result = "Please enter a valid number";
+            } else {
+                switch(unit) {
+                    case "cm": result = `${value} cm = ${value / 100} meters, ${value / 2.54} inches, ${value / 30.48} feet`; break;
+                    case "m": result = `${value} m = ${value * 100} cm, ${value * 39.37} inches, ${value * 3.281} feet`; break;
+                    case "inch": result = `${value} inch = ${value * 2.54} cm, ${value / 39.37} meters, ${value / 12} feet`; break;
+                    case "feet": result = `${value} feet = ${value * 30.48} cm, ${value * 12} inches, ${value / 3.281} meters`; break;
+                }
+            }
+            document.getElementById("result").textContent = result;
+        }
+        function goBack(){
+            window.location.href="home.html";
+        }
+    </script>
+</body>
+</html>
