@@ -1,2 +1,12 @@
 # Smart_Calc
-Smart Calc is a reponsive web calculator built using HTML, CSS, JavaScript, and Bootstrap. It supports basic, scientific, and unit conversion functions with efficient logic, modern UI, and cross-browser compatibility-demonstrating frontend proficiency and interactive design skills.
+A responsive web-based calculator built using HTML, CSS, JavaScript, and Bootstrap. It supports basic operations with a clean and user-friendly interface.
+## Features
+Performs basic arithmetic operations(+, -, *, /)
+responsive design( works on mobile & desktop)
+Clean and modern user interface
+interactive buttons and smooth functionality
+## Technologies Used
+HTML
+CSS
+JavaScript
+Bootstrap
