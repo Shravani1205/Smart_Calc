@@ -10,3 +10,19 @@ A responsive web-based calculator built using HTML, CSS, JavaScript, and Bootstr
 - CSS
 - JavaScript
 - Bootstrap
+## Screenshots
+<p align="center">
+  <img src="login_page.png" width="250"/>
+  <img src="Home_page.png" width="250"/>
+  <img src="Basic_page.png" width="250"/> 
+  <img src="scientific_page.png" width="250"/>
+   <img src="lenght_page.png" width="250"/>
+    <img src="currency_page.png" width="250"/>
+</p>
+
+## Learning outcome
+This project helped me improve my javascript logic, UI design, and problem-solving skills.
+## GitHub Repository
+https://github.com/Shravani1205/Smart_Calc
+
+  
